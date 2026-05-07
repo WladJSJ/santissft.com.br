@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SANTIS – Soluções em Fiscalização Tributária Municipal. Sistemas especializados em ISSQN e ITBI para prefeituras.">
+<title>SANTIS – Soluções em Fiscalização Tributária</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0b1f2e;
+  --petrol:#0e3d52;
+  --teal:#1a6b8a;
+  --mid:#2d8fa5;
+  --accent:#4db8b0;
+  --light:#e8f6f8;
+  --white:#ffffff;
+  --gray:#f4f7f8;
+  --text:#0b1f2e;
+  --muted:#4a6572;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,31,46,0.97);backdrop-filter:blur(8px);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;border-bottom:1px solid rgba(77,184,176,0.15)}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-brand{font-family:'Sora',sans-serif;font-weight:700;font-size:1.2rem;color:#fff;letter-spacing:0.04em}
+.nav-brand span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.9rem;transition:color 0.2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--accent);color:var(--navy);padding:8px 20px;border-radius:6px;font-weight:600;font-size:0.85rem;text-decoration:none;transition:background 0.2s}
+.nav-cta:hover{background:#3ba9a1}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(135deg,var(--navy) 0%,var(--petrol) 50%,#0a2d3f 100%);display:flex;align-items:center;padding:100px 5% 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(77,184,176,0.08) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(45,143,165,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(77,184,176,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(77,184,176,0.04) 1px,transparent 1px);background-size:60px 60px}
+.hero-content{position:relative;max-width:680px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(77,184,176,0.12);border:1px solid rgba(77,184,176,0.3);border-radius:100px;padding:6px 16px;margin-bottom:2rem}
+.hero-badge span{font-size:0.78rem;color:var(--accent);font-weight:500;letter-spacing:0.05em;text-transform:uppercase}
+.hero h1{font-family:'Sora',sans-serif;font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;color:#fff;line-height:1.12;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:1.05rem;color:rgba(255,255,255,0.7);max-width:520px;margin-bottom:2.5rem;font-weight:300;line-height:1.75}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:var(--navy);padding:14px 32px;border-radius:8px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.2s;font-family:'Sora',sans-serif}
+.btn-primary:hover{background:#3ba9a1;transform:translateY(-1px)}
+.btn-outline{border:1.5px solid rgba(77,184,176,0.5);color:var(--accent);padding:14px 32px;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:all 0.2s}
+.btn-outline:hover{background:rgba(77,184,176,0.08);border-color:var(--accent)}
+.hero-stats{position:relative;margin-top:4rem;display:flex;gap:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);flex-wrap:wrap}
+.stat-item .num{font-family:'Sora',sans-serif;font-size:2rem;font-weight:800;color:var(--accent)}
+.stat-item .lbl{font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:2px}
+
+/* SECTIONS */
+section{padding:90px 5%}
+.section-tag{display:inline-block;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);background:rgba(45,143,165,0.1);border-radius:4px;padding:4px 12px;margin-bottom:1rem}
+.section-title{font-family:'Sora',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:1rem}
+.section-sub{font-size:1rem;color:var(--muted);max-width:560px;line-height:1.7}
+.section-header{margin-bottom:3.5rem}
+
+/* SOBRE */
+.sobre{background:var(--gray)}
+.sobre-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.sobre-visual{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.sobre-card{background:var(--white);border-radius:12px;padding:1.5rem;border-left:4px solid var(--accent)}
+.sobre-card .ic{font-size:1.6rem;margin-bottom:0.75rem}
+.sobre-card h4{font-family:'Sora',sans-serif;font-weight:700;font-size:0.95rem;color:var(--navy);margin-bottom:0.4rem}
+.sobre-card p{font-size:0.82rem;color:var(--muted);line-height:1.5}
+
+/* PRODUTOS */
+.produtos{background:var(--white)}
+.produtos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+.produto-card{background:var(--gray);border-radius:16px;padding:2.5rem;position:relative;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;border:1px solid transparent}
+.produto-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(11,31,46,0.1);border-color:rgba(77,184,176,0.3)}
+.produto-card.destaque{background:linear-gradient(135deg,var(--navy),var(--petrol));color:white}
+.produto-card.destaque .produto-tag{background:rgba(77,184,176,0.2);color:var(--accent)}
+.produto-card.destaque h3{color:#fff}
+.produto-card.destaque p{color:rgba(255,255,255,0.65)}
+.produto-card.destaque .feat{color:rgba(255,255,255,0.8)}
+.produto-card.destaque .feat::before{color:var(--accent)}
+.produto-tag{display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:rgba(45,143,165,0.1);color:var(--mid);border-radius:4px;padding:4px 10px;margin-bottom:1.2rem}
+.produto-icon{width:52px;height:52px;background:rgba(77,184,176,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+.produto-icon svg{width:28px;height:28px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.produto-card.destaque .produto-icon{background:rgba(77,184,176,0.2)}
+.produto-card h3{font-family:'Sora',sans-serif;font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem}
+.produto-card p{font-size:0.9rem;color:var(--muted);line-height:1.65;margin-bottom:1.5rem}
+.feat-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.feat{font-size:0.85rem;color:var(--muted);display:flex;align-items:flex-start;gap:8px}
+.feat::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px}
+
+/* POR QUÊ */
+.porque{background:linear-gradient(135deg,var(--navy) 0%,var(--petrol) 100%);color:white}
+.porque .section-title{color:#fff}
+.porque .section-sub{color:rgba(255,255,255,0.6)}
+.porque .section-tag{color:var(--accent);background:rgba(77,184,176,0.15)}
+.pq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.pq-item{background:rgba(255,255,255,0.04);border:1px solid rgba(77,184,176,0.15);border-radius:12px;padding:2rem 1.5rem;transition:background 0.2s}
+.pq-item:hover{background:rgba(77,184,176,0.08)}
+.pq-num{font-family:'Sora',sans-serif;font-size:2.5rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:0.75rem}
+.pq-item h4{font-family:'Sora',sans-serif;font-weight:700;font-size:0.95rem;color:#fff;margin-bottom:0.5rem}
+.pq-item p{font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.55}
+
+/* CONTATO */
+.contato{background:var(--gray)}
+.contato-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start}
+.contato-info h3{font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:1rem}
+.contato-info p{color:var(--muted);font-size:0.9rem;line-height:1.7;margin-bottom:2rem}
+.contato-detail{display:flex;align-items:center;gap:12px;margin-bottom:1rem}
+.contato-detail .ic{width:38px;height:38px;background:rgba(45,143,165,0.12);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contato-detail .ic svg{width:18px;height:18px;stroke:var(--mid);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.contato-detail span{font-size:0.88rem;color:var(--muted)}
+.contato-detail strong{display:block;font-size:0.92rem;color:var(--navy)}
+.form{background:var(--white);border-radius:16px;padding:2.5rem;border:1px solid rgba(77,184,176,0.15)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:0.8rem;font-weight:600;color:var(--navy);margin-bottom:6px;letter-spacing:0.02em}
+.field input,.field select,.field textarea{width:100%;padding:10px 14px;border:1.5px solid #dde4e7;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--text);outline:none;transition:border-color 0.2s;background:var(--white)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--mid)}
+.field textarea{resize:vertical;min-height:110px}
+.form-submit{width:100%;background:var(--teal);color:#fff;border:none;padding:14px;border-radius:8px;font-family:'Sora',sans-serif;font-weight:700;font-size:0.95rem;cursor:pointer;transition:background 0.2s;margin-top:0.5rem}
+.form-submit:hover{background:var(--petrol)}
+.form-note{font-size:0.78rem;color:var(--muted);text-align:center;margin-top:0.75rem}
+.success-msg{display:none;background:rgba(77,184,176,0.1);border:1px solid var(--accent);border-radius:8px;padding:1rem;text-align:center;color:var(--teal);font-size:0.9rem;font-weight:500;margin-bottom:1rem}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,0.5);text-align:center;padding:2rem 5%;font-size:0.82rem}
+footer strong{color:var(--accent)}
+footer a{color:rgba(255,255,255,0.4);text-decoration:none}
+
+@media(max-width:768px){
+  .sobre-inner,.contato-inner{grid-template-columns:1fr}
+  .hero-stats{flex-wrap:wrap;gap:1.5rem}
+  .form-row{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <svg width="36" height="36" viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40 4L8 18V44C8 62 22 78 40 86C58 78 72 62 72 44V18L40 4Z" fill="#1a6b8a"/>
+      <rect x="32" y="30" width="6" height="20" rx="2" fill="#4db8b0"/>
+      <rect x="41" y="24" width="6" height="26" rx="2" fill="#4db8b0"/>
+      <rect x="50" y="18" width="6" height="32" rx="2" fill="#4db8b0"/>
+      <polyline points="28,58 36,48 44,54 56,40" stroke="#0b1f2e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <span class="nav-brand">SANTIS<span> Fiscal</span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#produtos">Sistemas</a></li>
+    <li><a href="#porque">Por que SANTIS</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="#contato" class="nav-cta">Fale conosco</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span>Tecnologia para municípios</span>
+    </div>
+    <h1>Fiscalização tributária<br><em>inteligente</em> para<br>sua prefeitura</h1>
+    <p>Sistemas desenvolvidos especificamente para a gestão fiscal municipal — ISSQN, ITBI e muito mais. Precisão, rastreabilidade e conformidade em cada processo.</p>
+    <div class="hero-actions">
+      <a href="#produtos" class="btn-primary">Conheça os sistemas</a>
+      <a href="#contato" class="btn-outline">Solicitar demonstração</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="num">2</div><div class="lbl">Sistemas especializados</div></div>
+      <div class="stat-item"><div class="num">100%</div><div class="lbl">Foco em gestão municipal</div></div>
+      <div class="stat-item"><div class="num">SP</div><div class="lbl">Interior de São Paulo</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" class="sobre">
+  <div class="sobre-inner">
+    <div>
+      <span class="section-tag">Quem somos</span>
+      <h2 class="section-title">Soluções desenvolvidas por quem entende de tributos municipais</h2>
+      <p style="color:var(--muted);line-height:1.75;margin-bottom:1.5rem">A SANTIS nasce da experiência prática no setor público. Nossos sistemas são criados por profissionais com vivência real na fiscalização tributária municipal, entendendo cada detalhe da legislação e das necessidades do servidor público.</p>
+      <p style="color:var(--muted);line-height:1.75">Combinamos domínio técnico em desenvolvimento de software com profundo conhecimento da legislação de ISSQN, ITBI e demais tributos municipais — entregando ferramentas que realmente funcionam na prática do dia a dia da prefeitura.</p>
+    </div>
+    <div class="sobre-visual">
+      <div class="sobre-card"><div class="ic">🏛️</div><h4>Foco municipal</h4><p>Sistemas 100% orientados à realidade das prefeituras brasileiras</p></div>
+      <div class="sobre-card"><div class="ic">⚙️</div><h4>Tecnologia moderna</h4><p>Desenvolvidos com Python, SQL Server e boas práticas de engenharia</p></div>
+      <div class="sobre-card"><div class="ic">📊</div><h4>Análise de dados</h4><p>Relatórios e dashboards para tomada de decisão baseada em dados reais</p></div>
+      <div class="sobre-card"><div class="ic">🛡️</div><h4>Conformidade fiscal</h4><p>Aderência às normas do Simples Nacional, MEI e legislação municipal</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section id="produtos" class="produtos">
+  <div class="section-header">
+    <span class="section-tag">Nossos sistemas</span>
+    <h2 class="section-title">Ferramentas completas para<br>fiscalização tributária municipal</h2>
+    <p class="section-sub">Cada sistema foi concebido para resolver um problema específico e real da gestão tributária municipal.</p>
+  </div>
+  <div class="produtos-grid">
+    <div class="produto-card destaque">
+      <span class="produto-tag">Carro-chefe</span>
+      <div class="produto-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 14l-4-4 4-4"/><path d="M5 10h11a4 4 0 0 1 0 8h-1"/></svg>
+      </div>
+      <h3>SANTIS-SFT / SEFISC</h3>
+      <p>Sistema completo de fiscalização de ISSQN. Auditoria, cruzamento de dados e identificação de inconsistências fiscais.</p>
+      <ul class="feat-list">
+        <li class="feat">Auditoria de declarações de ISS</li>
+        <li class="feat">Cruzamento com dados do Simples Nacional</li>
+        <li class="feat">Identificação de MEI acima do limite</li>
+        <li class="feat">Análises de DBC e SIR (2021+)</li>
+        <li class="feat">Dashboard de arrecadação em tempo real</li>
+      </ul>
+    </div>
+    <div class="produto-card">
+      <span class="produto-tag">Disponível</span>
+      <div class="produto-icon">
+        <svg viewBox="0 0 24 24" style="stroke:var(--mid)"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+      </div>
+      <h3>Sistema ITBI</h3>
+      <p>Gestão e fiscalização do Imposto de Transmissão de Bens Imóveis — controle preciso das transações imobiliárias do município.</p>
+      <ul class="feat-list">
+        <li class="feat">Registro e controle de transmissões</li>
+        <li class="feat">Cálculo automático do imposto</li>
+        <li class="feat">Histórico de transações imobiliárias</li>
+        <li class="feat">Relatórios gerenciais e fiscais</li>
+        <li class="feat">Integração com cartório e registro</li>
+      </ul>
+    </div>
+    <div class="produto-card">
+      <span class="produto-tag">Consultoria</span>
+      <div class="produto-icon">
+        <svg viewBox="0 0 24 24" style="stroke:var(--mid)"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <h3>Consultoria &amp; Implantação</h3>
+      <p>Suporte especializado para implantação, treinamento de equipes e adequação dos sistemas às necessidades específicas de cada município.</p>
+      <ul class="feat-list">
+        <li class="feat">Implantação assistida do sistema</li>
+        <li class="feat">Treinamento para servidores</li>
+        <li class="feat">Suporte técnico contínuo</li>
+        <li class="feat">Adequação à legislação local</li>
+        <li class="feat">Documentação completa</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÊ -->
+<section id="porque" class="porque">
+  <div class="section-header">
+    <span class="section-tag">Diferenciais</span>
+    <h2 class="section-title">Por que escolher a SANTIS?</h2>
+    <p class="section-sub">Desenvolvemos com quem usa. Cada funcionalidade nasce de uma necessidade real identificada no campo.</p>
+  </div>
+  <div class="pq-grid">
+    <div class="pq-item"><div class="pq-num">01</div><h4>Especialização municipal</h4><p>Foco exclusivo em tributos municipais — não somos um ERP genérico adaptado. Nascemos para esse propósito.</p></div>
+    <div class="pq-item"><div class="pq-num">02</div><h4>Experiência prática</h4><p>Desenvolvido por servidor público com vivência direta na fiscalização tributária municipal de São Paulo.</p></div>
+    <div class="pq-item"><div class="pq-num">03</div><h4>Tecnologia atual</h4><p>Stack moderno com Python, SQL Server e arquitetura pensada para performance e segurança de dados.</p></div>
+    <div class="pq-item"><div class="pq-num">04</div><h4>Suporte próximo</h4><p>Atendimento direto com o desenvolvedor — sem intermediários, sem fila de chamados demorados.</p></div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" class="contato">
+  <div class="section-header">
+    <span class="section-tag">Contato</span>
+    <h2 class="section-title">Vamos conversar sobre<br>o seu município?</h2>
+  </div>
+  <div class="contato-inner">
+    <div class="contato-info">
+      <h3>Solicite uma demonstração</h3>
+      <p>Preencha o formulário e entraremos em contato para agendar uma demonstração personalizada, sem compromisso.</p>
+      <div class="contato-detail">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div><strong>contato@santissft.com.br</strong><span>Respondemos em até 24h úteis</span></div>
+      </div>
+      <div class="contato-detail">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><strong>São Pedro – SP</strong><span>Interior de São Paulo, Brasil</span></div>
+      </div>
+      <div class="contato-detail">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.06 6.06l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div><strong>WhatsApp disponível</strong><span>Informe no formulário para contato via WhatsApp</span></div>
+      </div>
+    </div>
+    <div class="form">
+      <div id="successMsg" class="success-msg">✅ Mensagem enviada! Entraremos em contato em breve.</div>
+      <div class="form-row">
+        <div class="field"><label>Nome completo *</label><input type="text" id="nome" placeholder="Seu nome"></div>
+        <div class="field"><label>Cargo / Função</label><input type="text" id="cargo" placeholder="Ex: Auditor Fiscal"></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label>E-mail *</label><input type="email" id="email" placeholder="seu@email.gov.br"></div>
+        <div class="field"><label>Telefone / WhatsApp</label><input type="tel" id="tel" placeholder="(19) 99999-0000"></div>
+      </div>
+      <div class="field"><label>Município / Prefeitura *</label><input type="text" id="municipio" placeholder="Ex: Prefeitura Municipal de São Pedro"></div>
+      <div class="field">
+        <label>Sistema de interesse</label>
+        <select id="sistema">
+          <option value="">Selecione um sistema</option>
+          <option>SANTIS-SFT / SEFISC (ISSQN)</option>
+          <option>Sistema ITBI</option>
+          <option>Ambos os sistemas</option>
+          <option>Consultoria e implantação</option>
+        </select>
+      </div>
+      <div class="field"><label>Mensagem</label><textarea id="msg" placeholder="Conte-nos sobre as necessidades do seu município..."></textarea></div>
+      <button class="form-submit" onclick="enviarForm()">Enviar solicitação</button>
+      <p class="form-note">Seus dados são utilizados apenas para entrar em contato. Nenhuma informação é compartilhada.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p style="margin-bottom:6px"><strong>SANTIS</strong> – Soluções em Fiscalização Tributária</p>
+  <p>63.154.178 Wlademir José de Santis Junior &nbsp;|&nbsp; São Pedro – SP &nbsp;|&nbsp; <a href="mailto:contato@santissft.com.br">contato@santissft.com.br</a></p>
+  <p style="margin-top:10px;font-size:0.75rem">© 2025 SANTIS Fiscal. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+function enviarForm(){
+  const nome=document.getElementById('nome').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const municipio=document.getElementById('municipio').value.trim();
+  if(!nome||!email||!municipio){
+    alert('Por favor, preencha os campos obrigatórios: Nome, E-mail e Município.');
+    return;
+  }
+  document.getElementById('successMsg').style.display='block';
+  ['nome','cargo','email','tel','municipio','msg'].forEach(function(id){
+    document.getElementById(id).value='';
+  });
+  document.getElementById('sistema').value='';
+  setTimeout(function(){document.getElementById('successMsg').style.display='none';},5000);
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    var t=document.querySelector(a.getAttribute('href'));
+    if(t) t.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
