@@ -8,22 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --navy:#0b1f2e;
-  --petrol:#0e3d52;
-  --teal:#1a6b8a;
-  --mid:#2d8fa5;
-  --accent:#4db8b0;
-  --light:#e8f6f8;
-  --white:#ffffff;
-  --gray:#f4f7f8;
-  --text:#0b1f2e;
-  --muted:#4a6572;
-}
+:root{--navy:#0b1f2e;--petrol:#0e3d52;--teal:#1a6b8a;--mid:#2d8fa5;--accent:#4db8b0;--white:#ffffff;--gray:#f4f7f8;--text:#0b1f2e;--muted:#4a6572}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);line-height:1.6}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,31,46,0.97);backdrop-filter:blur(8px);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;border-bottom:1px solid rgba(77,184,176,0.15)}
 .nav-logo{display:flex;align-items:center;gap:12px}
 .nav-brand{font-family:'Sora',sans-serif;font-weight:700;font-size:1.2rem;color:#fff;letter-spacing:0.04em}
@@ -33,51 +20,44 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,31,46,0.9
 .nav-links a:hover{color:var(--accent)}
 .nav-cta{background:var(--accent);color:var(--navy);padding:8px 20px;border-radius:6px;font-weight:600;font-size:0.85rem;text-decoration:none;transition:background 0.2s}
 .nav-cta:hover{background:#3ba9a1}
-
-/* HERO */
 .hero{min-height:100vh;background:linear-gradient(135deg,var(--navy) 0%,var(--petrol) 50%,#0a2d3f 100%);display:flex;align-items:center;padding:100px 5% 60px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(77,184,176,0.08) 0%,transparent 70%);pointer-events:none}
 .hero::after{content:'';position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(45,143,165,0.06) 0%,transparent 70%);pointer-events:none}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(77,184,176,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(77,184,176,0.04) 1px,transparent 1px);background-size:60px 60px}
-.hero-content{position:relative;max-width:680px}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(77,184,176,0.12);border:1px solid rgba(77,184,176,0.3);border-radius:100px;padding:6px 16px;margin-bottom:2rem}
+.hero-content{position:relative;max-width:720px}
+.hero-badge{display:inline-flex;align-items:center;background:rgba(77,184,176,0.12);border:1px solid rgba(77,184,176,0.3);border-radius:100px;padding:6px 16px;margin-bottom:2rem}
 .hero-badge span{font-size:0.78rem;color:var(--accent);font-weight:500;letter-spacing:0.05em;text-transform:uppercase}
 .hero h1{font-family:'Sora',sans-serif;font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;color:#fff;line-height:1.12;margin-bottom:1.5rem}
 .hero h1 em{font-style:normal;color:var(--accent)}
-.hero p{font-size:1.05rem;color:rgba(255,255,255,0.7);max-width:520px;margin-bottom:2.5rem;font-weight:300;line-height:1.75}
+.hero p{font-size:1.05rem;color:rgba(255,255,255,0.7);max-width:580px;margin-bottom:2.5rem;font-weight:300;line-height:1.75}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
 .btn-primary{background:var(--accent);color:var(--navy);padding:14px 32px;border-radius:8px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.2s;font-family:'Sora',sans-serif}
 .btn-primary:hover{background:#3ba9a1;transform:translateY(-1px)}
 .btn-outline{border:1.5px solid rgba(77,184,176,0.5);color:var(--accent);padding:14px 32px;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:all 0.2s}
-.btn-outline:hover{background:rgba(77,184,176,0.08);border-color:var(--accent)}
-.hero-stats{position:relative;margin-top:4rem;display:flex;gap:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);flex-wrap:wrap}
+.btn-outline:hover{background:rgba(77,184,176,0.08)}
+.hero-stats{margin-top:4rem;display:flex;gap:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);flex-wrap:wrap}
 .stat-item .num{font-family:'Sora',sans-serif;font-size:2rem;font-weight:800;color:var(--accent)}
 .stat-item .lbl{font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:2px}
-
-/* SECTIONS */
 section{padding:90px 5%}
 .section-tag{display:inline-block;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);background:rgba(45,143,165,0.1);border-radius:4px;padding:4px 12px;margin-bottom:1rem}
 .section-title{font-family:'Sora',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:1rem}
-.section-sub{font-size:1rem;color:var(--muted);max-width:560px;line-height:1.7}
+.section-sub{font-size:1rem;color:var(--muted);max-width:600px;line-height:1.7}
 .section-header{margin-bottom:3.5rem}
-
-/* SOBRE */
-.sobre{background:var(--gray)}
-.sobre-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.sobre-visual{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.sobre-card{background:var(--white);border-radius:12px;padding:1.5rem;border-left:4px solid var(--accent)}
-.sobre-card .ic{font-size:1.6rem;margin-bottom:0.75rem}
-.sobre-card h4{font-family:'Sora',sans-serif;font-weight:700;font-size:0.95rem;color:var(--navy);margin-bottom:0.4rem}
-.sobre-card p{font-size:0.82rem;color:var(--muted);line-height:1.5}
-
-/* PRODUTOS */
+.contexto{background:var(--gray)}
+.contexto-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.contexto-cards{display:flex;flex-direction:column;gap:1rem}
+.ctx-card{background:var(--white);border-radius:12px;padding:1.5rem;border-left:4px solid var(--accent)}
+.ctx-card h4{font-family:'Sora',sans-serif;font-weight:700;font-size:0.95rem;color:var(--navy);margin-bottom:0.4rem}
+.ctx-card p{font-size:0.84rem;color:var(--muted);line-height:1.55}
+.ctx-card.warn{border-left-color:#e07a3a}
+.ctx-card.warn h4{color:#a0522d}
 .produtos{background:var(--white)}
 .produtos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
-.produto-card{background:var(--gray);border-radius:16px;padding:2.5rem;position:relative;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;border:1px solid transparent}
+.produto-card{background:var(--gray);border-radius:16px;padding:2.5rem;transition:transform 0.2s,box-shadow 0.2s;border:1px solid transparent}
 .produto-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(11,31,46,0.1);border-color:rgba(77,184,176,0.3)}
-.produto-card.destaque{background:linear-gradient(135deg,var(--navy),var(--petrol));color:white}
+.produto-card.destaque{background:linear-gradient(135deg,var(--navy),var(--petrol))}
 .produto-card.destaque .produto-tag{background:rgba(77,184,176,0.2);color:var(--accent)}
-.produto-card.destaque h3{color:#fff}
+.produto-card.destaque h3,.produto-card.destaque h3{color:#fff}
 .produto-card.destaque p{color:rgba(255,255,255,0.65)}
 .produto-card.destaque .feat{color:rgba(255,255,255,0.8)}
 .produto-card.destaque .feat::before{color:var(--accent)}
@@ -85,14 +65,25 @@ section{padding:90px 5%}
 .produto-icon{width:52px;height:52px;background:rgba(77,184,176,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
 .produto-icon svg{width:28px;height:28px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .produto-card.destaque .produto-icon{background:rgba(77,184,176,0.2)}
-.produto-card h3{font-family:'Sora',sans-serif;font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem}
-.produto-card p{font-size:0.9rem;color:var(--muted);line-height:1.65;margin-bottom:1.5rem}
+.produto-card h3{font-family:'Sora',sans-serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem}
+.produto-card p{font-size:0.88rem;color:var(--muted);line-height:1.65;margin-bottom:1.5rem}
 .feat-list{list-style:none;display:flex;flex-direction:column;gap:6px}
-.feat{font-size:0.85rem;color:var(--muted);display:flex;align-items:flex-start;gap:8px}
+.feat{font-size:0.84rem;color:var(--muted);display:flex;align-items:flex-start;gap:8px}
 .feat::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px}
-
-/* POR QUÊ */
-.porque{background:linear-gradient(135deg,var(--navy) 0%,var(--petrol) 100%);color:white}
+.modulos{background:var(--gray)}
+.modulos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.modulo-card{background:var(--white);border-radius:12px;padding:1.75rem;border-top:3px solid var(--accent)}
+.modulo-card h4{font-family:'Sora',sans-serif;font-weight:700;font-size:0.98rem;color:var(--navy);margin-bottom:0.6rem}
+.modulo-card p{font-size:0.84rem;color:var(--muted);line-height:1.6}
+.comparativo{background:var(--white);padding:70px 5%}
+.comp-table{width:100%;border-collapse:collapse;font-size:0.88rem}
+.comp-table th{padding:14px 20px;font-family:'Sora',sans-serif;font-weight:700;font-size:0.85rem}
+.comp-table th:first-child{background:#e8eef2;color:var(--muted);text-align:left;border-radius:8px 0 0 0}
+.comp-table th:last-child{background:var(--teal);color:#fff;text-align:left;border-radius:0 8px 0 0}
+.comp-table td{padding:12px 20px;border-bottom:1px solid #eef2f4}
+.comp-table td:first-child{color:var(--muted);background:#fafbfc}
+.comp-table td:last-child{color:var(--navy);font-weight:500;background:#f0f8fa}
+.porque{background:linear-gradient(135deg,var(--navy) 0%,var(--petrol) 100%)}
 .porque .section-title{color:#fff}
 .porque .section-sub{color:rgba(255,255,255,0.6)}
 .porque .section-tag{color:var(--accent);background:rgba(77,184,176,0.15)}
@@ -102,9 +93,12 @@ section{padding:90px 5%}
 .pq-num{font-family:'Sora',sans-serif;font-size:2.5rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:0.75rem}
 .pq-item h4{font-family:'Sora',sans-serif;font-weight:700;font-size:0.95rem;color:#fff;margin-bottom:0.5rem}
 .pq-item p{font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.55}
-
-/* CONTATO */
-.contato{background:var(--gray)}
+.beneficios{background:var(--gray)}
+.ben-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.ben-item{background:var(--white);border-radius:10px;padding:1.25rem;display:flex;align-items:flex-start;gap:10px}
+.ben-item .check{color:var(--accent);font-size:1.1rem;flex-shrink:0;margin-top:2px}
+.ben-item span{font-size:0.84rem;color:var(--muted);line-height:1.5}
+.contato{background:var(--white)}
 .contato-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start}
 .contato-info h3{font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:1rem}
 .contato-info p{color:var(--muted);font-size:0.9rem;line-height:1.7;margin-bottom:2rem}
@@ -113,7 +107,7 @@ section{padding:90px 5%}
 .contato-detail .ic svg{width:18px;height:18px;stroke:var(--mid);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .contato-detail span{font-size:0.88rem;color:var(--muted)}
 .contato-detail strong{display:block;font-size:0.92rem;color:var(--navy)}
-.form{background:var(--white);border-radius:16px;padding:2.5rem;border:1px solid rgba(77,184,176,0.15)}
+.form{background:var(--gray);border-radius:16px;padding:2.5rem;border:1px solid rgba(77,184,176,0.15)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
 .field{margin-bottom:1rem}
 .field label{display:block;font-size:0.8rem;font-weight:600;color:var(--navy);margin-bottom:6px;letter-spacing:0.02em}
@@ -124,25 +118,16 @@ section{padding:90px 5%}
 .form-submit:hover{background:var(--petrol)}
 .form-note{font-size:0.78rem;color:var(--muted);text-align:center;margin-top:0.75rem}
 .success-msg{display:none;background:rgba(77,184,176,0.1);border:1px solid var(--accent);border-radius:8px;padding:1rem;text-align:center;color:var(--teal);font-size:0.9rem;font-weight:500;margin-bottom:1rem}
-
-/* FOOTER */
 footer{background:var(--navy);color:rgba(255,255,255,0.5);text-align:center;padding:2rem 5%;font-size:0.82rem}
 footer strong{color:var(--accent)}
 footer a{color:rgba(255,255,255,0.4);text-decoration:none}
-
-@media(max-width:768px){
-  .sobre-inner,.contato-inner{grid-template-columns:1fr}
-  .hero-stats{flex-wrap:wrap;gap:1.5rem}
-  .form-row{grid-template-columns:1fr}
-  .nav-links{display:none}
-}
+@media(max-width:768px){.contexto-inner,.contato-inner{grid-template-columns:1fr}.hero-stats{flex-wrap:wrap;gap:1.5rem}.form-row{grid-template-columns:1fr}.nav-links{display:none}}
 </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-logo">
-    <svg width="36" height="36" viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="36" height="36" viewBox="0 0 80 90" fill="none">
       <path d="M40 4L8 18V44C8 62 22 78 40 86C58 78 72 62 72 44V18L40 4Z" fill="#1a6b8a"/>
       <rect x="32" y="30" width="6" height="20" rx="2" fill="#4db8b0"/>
       <rect x="41" y="24" width="6" height="26" rx="2" fill="#4db8b0"/>
@@ -152,125 +137,203 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none}
     <span class="nav-brand">SANTIS<span> Fiscal</span></span>
   </div>
   <ul class="nav-links">
-    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#contexto">Contexto</a></li>
     <li><a href="#produtos">Sistemas</a></li>
-    <li><a href="#porque">Por que SANTIS</a></li>
+    <li><a href="#modulos">Módulos ITBI</a></li>
     <li><a href="#contato">Contato</a></li>
   </ul>
-  <a href="#contato" class="nav-cta">Fale conosco</a>
+  <a href="#contato" class="nav-cta">Solicitar demonstração</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <div class="hero-badge">
-      <span>Tecnologia para municípios</span>
-    </div>
-    <h1>Fiscalização tributária<br><em>inteligente</em> para<br>sua prefeitura</h1>
-    <p>Sistemas desenvolvidos especificamente para a gestão fiscal municipal — ISSQN, ITBI e muito mais. Precisão, rastreabilidade e conformidade em cada processo.</p>
+    <div class="hero-badge"><span>Inteligência fiscal na era da Reforma Tributária</span></div>
+    <h1>Transformando dados<br>imobiliários em<br><em>autonomia financeira</em></h1>
+    <p>Sistemas especializados em ITBI e ISSQN para municípios. Análise comparativa de mercado, inteligência estatística, automação documental e fiscalização orientada por risco — em uma única plataforma.</p>
     <div class="hero-actions">
       <a href="#produtos" class="btn-primary">Conheça os sistemas</a>
       <a href="#contato" class="btn-outline">Solicitar demonstração</a>
     </div>
     <div class="hero-stats">
+      <div class="stat-item"><div class="num">100%</div><div class="lbl">Das operações analisadas automaticamente</div></div>
       <div class="stat-item"><div class="num">2</div><div class="lbl">Sistemas especializados</div></div>
-      <div class="stat-item"><div class="num">100%</div><div class="lbl">Foco em gestão municipal</div></div>
-      <div class="stat-item"><div class="num">SP</div><div class="lbl">Interior de São Paulo</div></div>
+      <div class="stat-item"><div class="num">0</div><div class="lbl">Subjetividade na análise fiscal</div></div>
     </div>
   </div>
 </section>
 
-<!-- SOBRE -->
-<section id="sobre" class="sobre">
-  <div class="sobre-inner">
+<section id="contexto" class="contexto">
+  <div class="contexto-inner">
     <div>
-      <span class="section-tag">Quem somos</span>
-      <h2 class="section-title">Soluções desenvolvidas por quem entende de tributos municipais</h2>
-      <p style="color:var(--muted);line-height:1.75;margin-bottom:1.5rem">A SANTIS nasce da experiência prática no setor público. Nossos sistemas são criados por profissionais com vivência real na fiscalização tributária municipal, entendendo cada detalhe da legislação e das necessidades do servidor público.</p>
-      <p style="color:var(--muted);line-height:1.75">Combinamos domínio técnico em desenvolvimento de software com profundo conhecimento da legislação de ISSQN, ITBI e demais tributos municipais — entregando ferramentas que realmente funcionam na prática do dia a dia da prefeitura.</p>
+      <span class="section-tag">O cenário municipal</span>
+      <h2 class="section-title">A Reforma Tributária muda o jogo para os municípios</h2>
+      <p style="color:var(--muted);line-height:1.75;margin-bottom:1.5rem">Com a gradual padronização nacional do ISSQN, a sobrevivência financeira dos municípios passa a depender da otimização de suas receitas patrimoniais próprias. O ITBI e o IPTU deixam de ser tributos secundários e se tornam o pilar central da autonomia financeira local.</p>
+      <p style="color:var(--muted);line-height:1.75">Municípios que estruturarem mecanismos modernos de fiscalização imobiliária estarão mais preparados para o novo ambiente tributário nacional. A modernização da fiscalização do ITBI integra uma estratégia mais ampla de fortalecimento da autonomia financeira municipal.</p>
     </div>
-    <div class="sobre-visual">
-      <div class="sobre-card"><div class="ic">🏛️</div><h4>Foco municipal</h4><p>Sistemas 100% orientados à realidade das prefeituras brasileiras</p></div>
-      <div class="sobre-card"><div class="ic">⚙️</div><h4>Tecnologia moderna</h4><p>Desenvolvidos com Python, SQL Server e boas práticas de engenharia</p></div>
-      <div class="sobre-card"><div class="ic">📊</div><h4>Análise de dados</h4><p>Relatórios e dashboards para tomada de decisão baseada em dados reais</p></div>
-      <div class="sobre-card"><div class="ic">🛡️</div><h4>Conformidade fiscal</h4><p>Aderência às normas do Simples Nacional, MEI e legislação municipal</p></div>
+    <div class="contexto-cards">
+      <div class="ctx-card warn">
+        <h4>Declínio da autonomia sobre o ISSQN</h4>
+        <p>A Reforma Tributária reduz progressivamente o controle municipal sobre as rotinas de emissão, escrituração e fiscalização do ISS — hoje descentralizadas e sob controle local.</p>
+      </div>
+      <div class="ctx-card">
+        <h4>Crescimento estratégico do ITBI e IPTU</h4>
+        <p>As receitas vinculadas ao patrimônio imobiliário tornam-se o pilar central da sustentabilidade financeira local — e precisam ser fiscalizadas com rigor técnico e metodologia moderna.</p>
+      </div>
+      <div class="ctx-card">
+        <h4>O problema da subavaliação histórica</h4>
+        <p>Em grande parte dos municípios, o valor declarado no ITBI corresponde apenas ao valor venal do IPTU, criando um incentivo sistêmico à evasão fiscal e injustiça tributária.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PRODUTOS -->
 <section id="produtos" class="produtos">
   <div class="section-header">
     <span class="section-tag">Nossos sistemas</span>
-    <h2 class="section-title">Ferramentas completas para<br>fiscalização tributária municipal</h2>
-    <p class="section-sub">Cada sistema foi concebido para resolver um problema específico e real da gestão tributária municipal.</p>
+    <h2 class="section-title">Plataformas completas de<br>inteligência fiscal municipal</h2>
+    <p class="section-sub">Desenvolvidos a partir da experiência prática em fiscalização tributária municipal — não somos um ERP genérico adaptado ao setor público.</p>
   </div>
   <div class="produtos-grid">
     <div class="produto-card destaque">
-      <span class="produto-tag">Carro-chefe</span>
-      <div class="produto-icon">
-        <svg viewBox="0 0 24 24"><path d="M9 14l-4-4 4-4"/><path d="M5 10h11a4 4 0 0 1 0 8h-1"/></svg>
-      </div>
-      <h3>SANTIS-SFT / SEFISC</h3>
-      <p>Sistema completo de fiscalização de ISSQN. Auditoria, cruzamento de dados e identificação de inconsistências fiscais.</p>
+      <span class="produto-tag">Sistema ITBI</span>
+      <div class="produto-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
+      <h3>Sistema Inteligente de Fiscalização do ITBI</h3>
+      <p>Plataforma de inteligência fiscal para identificação de subavaliação na base de cálculo do ITBI. Combina análise comparativa de mercado imobiliário, estatística avançada e automação documental completa.</p>
       <ul class="feat-list">
-        <li class="feat">Auditoria de declarações de ISS</li>
-        <li class="feat">Cruzamento com dados do Simples Nacional</li>
-        <li class="feat">Identificação de MEI acima do limite</li>
-        <li class="feat">Análises de DBC e SIR (2021+)</li>
-        <li class="feat">Dashboard de arrecadação em tempo real</li>
+        <li class="feat">Análise comparativa por R$/m² com amostras dinâmicas</li>
+        <li class="feat">Filtro de financiamento bancário como âncora de verdade</li>
+        <li class="feat">Fila Inteligente de Auditoria orientada por risco estatístico</li>
+        <li class="feat">Clusterização territorial e cartografia fiscal interativa</li>
+        <li class="feat">Radar de mercado ofertado — web scraping automatizado</li>
+        <li class="feat">Automação documental: pareceres, notificações e certidões</li>
+        <li class="feat">Módulo especializado de imunidade tributária</li>
       </ul>
     </div>
     <div class="produto-card">
-      <span class="produto-tag">Disponível</span>
-      <div class="produto-icon">
-        <svg viewBox="0 0 24 24" style="stroke:var(--mid)"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-      </div>
-      <h3>Sistema ITBI</h3>
-      <p>Gestão e fiscalização do Imposto de Transmissão de Bens Imóveis — controle preciso das transações imobiliárias do município.</p>
+      <span class="produto-tag">Sistema ISSQN</span>
+      <div class="produto-icon"><svg viewBox="0 0 24 24" style="stroke:var(--mid)"><path d="M9 14l-4-4 4-4"/><path d="M5 10h11a4 4 0 0 1 0 8h-1"/></svg></div>
+      <h3>SANTIS-SFT / SEFISC</h3>
+      <p>Sistema completo de fiscalização de ISSQN — Imposto Sobre Serviços de Qualquer Natureza. Auditoria fiscal, cruzamento de dados e identificação de inconsistências no Simples Nacional.</p>
       <ul class="feat-list">
-        <li class="feat">Registro e controle de transmissões</li>
-        <li class="feat">Cálculo automático do imposto</li>
-        <li class="feat">Histórico de transações imobiliárias</li>
-        <li class="feat">Relatórios gerenciais e fiscais</li>
-        <li class="feat">Integração com cartório e registro</li>
+        <li class="feat">Auditoria de declarações de ISS e cruzamento de dados</li>
+        <li class="feat">Identificação de MEI acima do limite de faturamento</li>
+        <li class="feat">Análises de DBC e SIR (2021+)</li>
+        <li class="feat">Dashboard de arrecadação e lançamentos em tempo real</li>
+        <li class="feat">Relatórios analíticos de arrecadado e lançado por tributo</li>
+        <li class="feat">Integração com base de dados do Simples Nacional</li>
       </ul>
     </div>
     <div class="produto-card">
       <span class="produto-tag">Consultoria</span>
-      <div class="produto-icon">
-        <svg viewBox="0 0 24 24" style="stroke:var(--mid)"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-      </div>
+      <div class="produto-icon"><svg viewBox="0 0 24 24" style="stroke:var(--mid)"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
       <h3>Consultoria &amp; Implantação</h3>
-      <p>Suporte especializado para implantação, treinamento de equipes e adequação dos sistemas às necessidades específicas de cada município.</p>
+      <p>Suporte especializado para implantação, parametrização às características cadastrais de cada município e treinamento das equipes de auditoria tributária.</p>
       <ul class="feat-list">
-        <li class="feat">Implantação assistida do sistema</li>
-        <li class="feat">Treinamento para servidores</li>
-        <li class="feat">Suporte técnico contínuo</li>
-        <li class="feat">Adequação à legislação local</li>
-        <li class="feat">Documentação completa</li>
+        <li class="feat">Implantação assistida e parametrização local</li>
+        <li class="feat">Treinamento para auditores e servidores fiscais</li>
+        <li class="feat">Suporte técnico contínuo pós-implantação</li>
+        <li class="feat">Adequação à legislação municipal específica</li>
+        <li class="feat">Documentação técnica completa</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- POR QUÊ -->
+<section id="modulos" class="modulos">
+  <div class="section-header">
+    <span class="section-tag">Módulos do sistema ITBI</span>
+    <h2 class="section-title">Uma plataforma completa,<br>do dado ao documento fiscal</h2>
+    <p class="section-sub">O SANTIS atua como um exoesqueleto analítico — não substitui o auditor tributário, mas amplifica sua capacidade de análise e elimina a subjetividade fiscal.</p>
+  </div>
+  <div class="modulos-grid">
+    <div class="modulo-card">
+      <h4>🏦 Âncora do Financiamento Bancário</h4>
+      <p>Operações com financiamento são usadas prioritariamente como base de referência. Instituições financeiras exigem avaliações rigorosas, eliminando o incentivo à subavaliação e fornecendo o verdadeiro R$/m² de mercado.</p>
+    </div>
+    <div class="modulo-card">
+      <h4>🎯 Amostras Dinâmicas e Precisão Cirúrgica</h4>
+      <p>O sistema cruza área, terreno, categoria e bairro para formar amostras comparativas instantâneas. Filtros parametrizáveis garantem que um apartamento de luxo nunca seja comparado estatisticamente a uma casa popular.</p>
+    </div>
+    <div class="modulo-card">
+      <h4>🗺️ Clusterização Territorial</h4>
+      <p>Identifica automaticamente bairros com comportamento econômico semelhante baseando-se no R$/m². Permite expandir a amostra agrupando regiões distantes geograficamente, mas equivalentes economicamente.</p>
+    </div>
+    <div class="modulo-card">
+      <h4>📡 Radar do Mercado Ofertado</h4>
+      <p>Módulo de web scraping coleta continuamente anúncios públicos de imóveis, estruturando uma base própria de preços ofertados. Evidência auxiliar robusta para confrontar declarações com a realidade do mercado local.</p>
+    </div>
+    <div class="modulo-card">
+      <h4>📊 Fila Inteligente de Auditoria</h4>
+      <p>Aplica filtro log-normal sobre 100% das transações cadastradas. Operações na cauda inferior da distribuição (percentil 5) disparam alertas automáticos — substituindo a amostragem aleatória por priorização algorítmica de risco.</p>
+    </div>
+    <div class="modulo-card">
+      <h4>📄 Automação Documental</h4>
+      <p>Geração automática de relatórios técnicos, pareceres fiscais, notificações e documentos para arbitramento da base de cálculo — com rastreabilidade total e segurança jurídica para defesa em contestações administrativas.</p>
+    </div>
+    <div class="modulo-card">
+      <h4>🏛️ Imunidade Tributária</h4>
+      <p>Módulo especializado para análise de imunidade nos casos de integralização de bens ao capital social. Organiza documentação contábil e societária, emite pareceres técnicos e certidões de imunidade padronizadas.</p>
+    </div>
+    <div class="modulo-card">
+      <h4>🔗 Integração Cadastral Municipal</h4>
+      <p>Integra-se automaticamente à base cadastral do município para obter área do terreno, área construída, categoria e dados complementares — eliminando retrabalho manual e garantindo consistência analítica.</p>
+    </div>
+  </div>
+</section>
+
+<section class="comparativo">
+  <div class="section-header">
+    <span class="section-tag">O ponto de virada</span>
+    <h2 class="section-title">Fiscalização tradicional vs.<br>Inteligência Fiscal SANTIS</h2>
+  </div>
+  <div style="overflow-x:auto">
+    <table class="comp-table">
+      <thead><tr><th>Fiscalização Tradicional</th><th>Inteligência Fiscal SANTIS</th></tr></thead>
+      <tbody>
+        <tr><td>Valor Venal do IPTU como referência (subjetivo e desatualizado)</td><td>Transações financiadas como âncora — valor real validado por bancos</td></tr>
+        <tr><td>Reativa, manual e limitada a pequena amostra</td><td>Contínua, analisando 100% das operações cadastradas</td></tr>
+        <tr><td>Priorização aleatória ou por intuição fiscal</td><td>Fila de Auditoria Algorítmica baseada em percentis de risco</td></tr>
+        <tr><td>Empírica, gerando alta judicialização</td><td>Relatórios estatísticos robustos e automação documental padronizada</td></tr>
+        <tr><td>Ausência de metodologia comparativa padronizada</td><td>Amostras dinâmicas com filtros parametrizáveis por tipo e região</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
 <section id="porque" class="porque">
   <div class="section-header">
     <span class="section-tag">Diferenciais</span>
     <h2 class="section-title">Por que escolher a SANTIS?</h2>
-    <p class="section-sub">Desenvolvemos com quem usa. Cada funcionalidade nasce de uma necessidade real identificada no campo.</p>
+    <p class="section-sub">Desenvolvemos com quem usa. Cada funcionalidade nasce de uma necessidade real identificada no campo da fiscalização tributária municipal.</p>
   </div>
   <div class="pq-grid">
-    <div class="pq-item"><div class="pq-num">01</div><h4>Especialização municipal</h4><p>Foco exclusivo em tributos municipais — não somos um ERP genérico adaptado. Nascemos para esse propósito.</p></div>
-    <div class="pq-item"><div class="pq-num">02</div><h4>Experiência prática</h4><p>Desenvolvido por servidor público com vivência direta na fiscalização tributária municipal de São Paulo.</p></div>
-    <div class="pq-item"><div class="pq-num">03</div><h4>Tecnologia atual</h4><p>Stack moderno com Python, SQL Server e arquitetura pensada para performance e segurança de dados.</p></div>
-    <div class="pq-item"><div class="pq-num">04</div><h4>Suporte próximo</h4><p>Atendimento direto com o desenvolvedor — sem intermediários, sem fila de chamados demorados.</p></div>
+    <div class="pq-item"><div class="pq-num">01</div><h4>Experiência prática</h4><p>Desenvolvido por servidor público com vivência direta em fiscalização tributária — não por consultores sem contato com a realidade do auditor municipal.</p></div>
+    <div class="pq-item"><div class="pq-num">02</div><h4>Especialização municipal</h4><p>Foco exclusivo em tributos municipais. Não adaptamos um ERP genérico — nascemos para ITBI e ISSQN, com cada detalhe pensado para o auditor fiscal.</p></div>
+    <div class="pq-item"><div class="pq-num">03</div><h4>Segurança jurídica</h4><p>Toda análise gera documentação técnica padronizada com rastreabilidade total, reduzindo subjetividade e fortalecendo a defesa administrativa em contestações.</p></div>
+    <div class="pq-item"><div class="pq-num">04</div><h4>Suporte próximo</h4><p>Atendimento direto com o desenvolvedor — sem intermediários, sem fila de chamados demorados. Suporte de quem conhece cada linha do sistema.</p></div>
   </div>
 </section>
 
-<!-- CONTATO -->
+<section class="beneficios">
+  <div class="section-header">
+    <span class="section-tag">Resultados para o município</span>
+    <h2 class="section-title">O que muda na prática</h2>
+  </div>
+  <div class="ben-grid">
+    <div class="ben-item"><span class="check">✓</span><span>Aumento potencial da arrecadação própria sem elevação de alíquotas</span></div>
+    <div class="ben-item"><span class="check">✓</span><span>Redução da evasão fiscal e da subavaliação sistemática de imóveis</span></div>
+    <div class="ben-item"><span class="check">✓</span><span>Fortalecimento da justiça tributária e isonomia entre contribuintes</span></div>
+    <div class="ben-item"><span class="check">✓</span><span>Priorização inteligente das auditorias de maior retorno (ROI)</span></div>
+    <div class="ben-item"><span class="check">✓</span><span>Padronização técnica das análises e uniformização fiscal</span></div>
+    <div class="ben-item"><span class="check">✓</span><span>Rastreabilidade total das decisões administrativas</span></div>
+    <div class="ben-item"><span class="check">✓</span><span>Redução da judicialização com embasamento técnico robusto</span></div>
+    <div class="ben-item"><span class="check">✓</span><span>Aproveitamento máximo da estrutura fiscal existente</span></div>
+    <div class="ben-item"><span class="check">✓</span><span>Fortalecimento da autonomia financeira frente à Reforma Tributária</span></div>
+    <div class="ben-item"><span class="check">✓</span><span>Modernização da fiscalização municipal com tecnologia acessível</span></div>
+  </div>
+</section>
+
 <section id="contato" class="contato">
   <div class="section-header">
     <span class="section-tag">Contato</span>
@@ -279,7 +342,7 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none}
   <div class="contato-inner">
     <div class="contato-info">
       <h3>Solicite uma demonstração</h3>
-      <p>Preencha o formulário e entraremos em contato para agendar uma demonstração personalizada, sem compromisso.</p>
+      <p>Preencha o formulário e entraremos em contato para agendar uma demonstração personalizada dos sistemas, adaptada à realidade do seu município — sem compromisso.</p>
       <div class="contato-detail">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
         <div><strong>contato@santissft.com.br</strong><span>Respondemos em até 24h úteis</span></div>
@@ -308,8 +371,8 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none}
         <label>Sistema de interesse</label>
         <select id="sistema">
           <option value="">Selecione um sistema</option>
-          <option>SANTIS-SFT / SEFISC (ISSQN)</option>
-          <option>Sistema ITBI</option>
+          <option>Sistema Inteligente de Fiscalização do ITBI</option>
+          <option>SANTIS-SFT / SEFISC (ISSQN / Simples Nacional)</option>
           <option>Ambos os sistemas</option>
           <option>Consultoria e implantação</option>
         </select>
@@ -329,17 +392,12 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none}
 
 <script>
 function enviarForm(){
-  const nome=document.getElementById('nome').value.trim();
-  const email=document.getElementById('email').value.trim();
-  const municipio=document.getElementById('municipio').value.trim();
-  if(!nome||!email||!municipio){
-    alert('Por favor, preencha os campos obrigatórios: Nome, E-mail e Município.');
-    return;
-  }
+  var nome=document.getElementById('nome').value.trim();
+  var email=document.getElementById('email').value.trim();
+  var municipio=document.getElementById('municipio').value.trim();
+  if(!nome||!email||!municipio){alert('Por favor, preencha os campos obrigatórios: Nome, E-mail e Município.');return;}
   document.getElementById('successMsg').style.display='block';
-  ['nome','cargo','email','tel','municipio','msg'].forEach(function(id){
-    document.getElementById(id).value='';
-  });
+  ['nome','cargo','email','tel','municipio','msg'].forEach(function(id){document.getElementById(id).value='';});
   document.getElementById('sistema').value='';
   setTimeout(function(){document.getElementById('successMsg').style.display='none';},5000);
 }
@@ -347,7 +405,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
   a.addEventListener('click',function(e){
     e.preventDefault();
     var t=document.querySelector(a.getAttribute('href'));
-    if(t) t.scrollIntoView({behavior:'smooth'});
+    if(t)t.scrollIntoView({behavior:'smooth'});
   });
 });
 </script>
